@@ -238,17 +238,6 @@
         backdrop-filter: blur(6px);
       }
 
-      #youtube-player {
-        position: fixed;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-        pointer-events: none;
-        overflow: hidden;
-        left: -9999px;
-        top: -9999px;
-      }
-
       @media (max-width: 860px) {
         .hero {
           grid-template-columns: 1fr;
@@ -331,10 +320,8 @@
       </div>
     </div>
 
-    <div id="youtube-player" aria-hidden="true"></div>
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
     <script>
       const form = document.getElementById('requestForm');
