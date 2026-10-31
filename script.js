@@ -1,4 +1,4 @@
-const backgroundMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+const backgroundMusic = new Audio('https://soundcloud.com/minecraft-scmusic/precipice-hyper-potions-remix?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
 backgroundMusic.loop = true;
 backgroundMusic.muted = true;
 backgroundMusic.volume = 0.5;
