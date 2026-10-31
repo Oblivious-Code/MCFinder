@@ -1,7 +1,23 @@
 let player;
 let isMuted = true;
+let isPlayerReady = false;
+let toggleButton = null;
 
-function onYouTubeIframeAPIReady() {
+function applyMusicState() {
+  if (!player || !isPlayerReady) return;
+
+  if (isMuted) {
+    player.mute();
+    player.pauseVideo();
+    if (toggleButton) toggleButton.textContent = '🔇 Music';
+  } else {
+    player.unMute();
+    player.playVideo();
+    if (toggleButton) toggleButton.textContent = '🔊 Music';
+  }
+}
+
+window.onYouTubeIframeAPIReady = function () {
   const playerEl = document.getElementById('youtube-player');
   if (!playerEl) return;
 
@@ -18,8 +34,8 @@ function onYouTubeIframeAPIReady() {
     },
     events: {
       onReady: function () {
-        player.playVideo();
-        player.mute();
+        isPlayerReady = true;
+        applyMusicState();
       },
       onStateChange: function (event) {
         if (event.data === YT.PlayerState.ENDED) {
@@ -29,24 +45,18 @@ function onYouTubeIframeAPIReady() {
       }
     }
   });
-}
+};
 
 document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.getElementById('musicToggle');
+  toggleButton = document.getElementById('musicToggle');
 
   if (!toggleButton) return;
 
   toggleButton.addEventListener('click', function () {
-    if (!player) return;
-
-    if (isMuted) {
-      player.unMute();
-      toggleButton.textContent = '🔊 Music';
-    } else {
-      player.mute();
-      toggleButton.textContent = '🔇 Music';
-    }
-
     isMuted = !isMuted;
+
+    if (player && isPlayerReady) {
+      applyMusicState();
+    }
   });
 });
