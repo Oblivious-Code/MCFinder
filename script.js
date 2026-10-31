@@ -1,4 +1,4 @@
-const backgroundMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+const backgroundMusic = new Audio('https://files.catbox.moe/xmdojz.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.muted = true;
 backgroundMusic.volume = 0.5;
