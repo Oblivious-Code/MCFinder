@@ -1,4 +1,4 @@
-const backgroundMusic = new Audio('https://soundcloud.com/minecraft-scmusic/precipice-hyper-potions-remix?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing');
+const backgroundMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.muted = true;
 backgroundMusic.volume = 0.5;
@@ -22,8 +22,9 @@ async function toggleMusic() {
     try {
       await backgroundMusic.play();
       setMusicButtonState(false);
-    } catch (err) {
-      console.log('Music play blocked until user interaction:', err);
+    } catch (error) {
+      console.log('Music play blocked until user interaction:', error);
+      backgroundMusic.muted = true;
     }
   } else {
     backgroundMusic.muted = true;
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   backgroundMusic.addEventListener('ended', () => {
     backgroundMusic.currentTime = 0;
-    if (backgroundMusic.muted === false) {
+    if (!backgroundMusic.muted) {
       backgroundMusic.play();
     }
   });
