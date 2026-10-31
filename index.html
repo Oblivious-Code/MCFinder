@@ -238,13 +238,15 @@
         backdrop-filter: blur(6px);
       }
 
-      #youtube-audio {
+      #youtube-player {
         position: fixed;
-        width: 0;
-        height: 0;
+        width: 1px;
+        height: 1px;
         opacity: 0;
         pointer-events: none;
         overflow: hidden;
+        left: -9999px;
+        top: -9999px;
       }
 
       @media (max-width: 860px) {
@@ -272,9 +274,8 @@
             <div class="eyebrow">Mod and MC-Addon Finder</div>
             <h1>MC-Addon & Mods <span class="highlight">Finder</span></h1>
             <p class="subtitle">
-              Ask for any type of mc-addon or mod you want to find. Whether it is a 
-              world, Java mod, map, resource pack, or custom add-on, i can help you track it down. Like MJ767 Lol;) 
-              Or find one in your vision. Your response may come in a few weeks depending on the demand.
+              Ask for any type of mc-addon or mod you want to find. Whether it is a world,
+              Java mod, map, resource pack, or custom add-on, I can help you track it down.
             </p>
 
             <div class="email-row">
@@ -288,7 +289,7 @@
           <div class="hero-panel">
             <div class="request-card">
               <h2>Request a MC pack</h2>
-              <p>Tell me what you want and i'll prepare a matching request.</p>
+              <p>Tell me what you want and I’ll prepare a matching request.</p>
 
               <form id="requestForm">
                 <div class="field">
@@ -311,10 +312,10 @@
                   <select id="version" name="version" required>
                     <option value="">Select...</option>
                     <option value="Java Edition 1.26+">Java Edition 1.26+</option>
-                    <option value="Java Edition 1.20-1.21.">Java Edition 1.20-1.21</option>
+                    <option value="Java Edition 1.20-1.21">Java Edition 1.20-1.21</option>
                     <option value="Java Edition 1.16-1.19">Java Edition 1.16-1.19</option>
                     <option value="Bedrock 1.26+">Bedrock 1.26+</option>
-                    <option value="Bedrock 1.20-1.21">Bedrock 1.20-1.21+</option>
+                    <option value="Bedrock 1.20-1.21+">Bedrock 1.20-1.21+</option>
                     <option value="Bedrock 1.16-1.19">Bedrock 1.16-1.19</option>
                     <option value="Any Version">Any Version</option>
                   </select>
@@ -330,10 +331,8 @@
       </div>
     </div>
 
-    <div id="youtube-audio" aria-hidden="true"></div>
-    <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">
-      🔇 Music
-    </button>
+    <div id="youtube-player" aria-hidden="true"></div>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
