@@ -238,6 +238,35 @@
         backdrop-filter: blur(6px);
       }
 
+      .music-credit {
+        position: fixed;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        z-index: 999;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(11, 17, 27, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        font-size: 0.82rem;
+        text-align: center;
+        line-height: 1.4;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+        max-width: calc(100% - 30px);
+      }
+
+      .music-credit a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .music-credit a:hover {
+        text-decoration: underline;
+      }
+
       @media (max-width: 860px) {
         .hero {
           grid-template-columns: 1fr;
@@ -251,6 +280,11 @@
           border-left: none;
           border-top: 1px solid var(--border);
           padding: 20px 18px 24px;
+        }
+
+        .music-credit {
+          bottom: 72px;
+          font-size: 0.72rem;
         }
       }
     </style>
@@ -323,6 +357,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="music-credit">
+      ALL RIGHTS RESERVED FOR <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Hyper Potions</a>! Check his channel out! Just <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">hyper potions</a>...
     </div>
 
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
