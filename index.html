@@ -6,7 +6,6 @@
     <title>Mod and MC-Addon Finder</title>
     <meta name="description" content="Submit a request to safely find and track down specific Minecraft add-ons, Java mods, maps, and texture packs across multiple game versions." />
     <meta name="keywords" content="minecraft addon finder, download mc mods, bedrock addon request, java mod tracker, mc finder" />
-    <meta name="robots" content="index, follow" />
     <style>
       :root {
         --bg: #0c1220;
@@ -349,36 +348,5 @@
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
     <script src="script.js"></script>
-    <script>
-      const form = document.getElementById('requestForm');
-
-      if (form) {
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-
-          const subject = document.getElementById('subject').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const find = document.getElementById('find').value.trim();
-          const version = document.getElementById('version').value.trim();
-
-          if (!subject || !email || !find || !version) {
-            alert('Please fill in all fields before sending your request.');
-            return;
-          }
-
-          const mailtoBody = [
-            'Subject: ' + subject,
-            '',
-            'Email: ' + email,
-            'Compatibility Version: ' + version,
-            '',
-            'What to Find:',
-            find
-          ].join('\n');
-
-          window.location.href = 'mailto:inspireback@tutamail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
-        });
-      }
-    </script>
   </body>
 </html>
