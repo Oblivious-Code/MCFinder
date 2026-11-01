@@ -342,24 +342,24 @@
     </div>
 
     <div class="music-credit">
-      ALL RIGHTS RESERVED FOR <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Hyper Potions</a>! Check his channel out! Just <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">hyper potions</a>...
+      ALL RIGHTS RESERVED FOR <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Hyper Potions</a>! Check his channel out! Just <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">click here</a>!
     </div>
 
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
-    <script src="script.js"></script>
- 
-    document.getElementById('requestForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const subject = document.getElementById('subject').value;
-  const email = document.getElementById('email').value;
-  const find = document.getElementById('find').value;
-  const version = document.getElementById('version').value;
-  
-  const body = `Sender Email: ${email}\nVersion: ${version}\n\nDetails:\n${find}`;
-  
-  window.location.href = `mailto:inspireback@://tutamail.com{encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+    <script>
+      document.getElementById('requestForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const subject = document.getElementById('subject').value.trim() || 'MC Pack Request';
+        const email = document.getElementById('email').value.trim();
+        const find = document.getElementById('find').value.trim();
+        const version = document.getElementById('version').value;
+
+        const body = `Sender Email: ${email}\nVersion: ${version}\n\nDetails:\n${find}`;
+
+        window.location.href = `mailto:inspireback@tutamail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    </script>
   </body>
 </html>
