@@ -47,5 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   backgroundMusic.addEventListener('error', () => {
     console.log('The selected music file failed to load.');
+    const form = document.getElementById('requestForm');
+if (form) form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const sub = encodeURIComponent(document.getElementById('subject').value);
+  const body = encodeURIComponent(`Email: ${document.getElementById('email').value}\nVersion: ${document.getElementById('version').value}\n\nDetails:\n${document.getElementById('find').value}`);
+  window.open(`mailto:inspireback@://tutamail.com{sub}&body=${body}`, '_self');
+});
+
   });
 });
