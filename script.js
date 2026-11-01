@@ -1,12 +1,22 @@
 const musicChoices = [
   'https://files.catbox.moe/xmdojz.mp3',
-  'https://files.catbox.moe/66353n.mp3'
+  'https://files.catbox.moe/66353n.mp3',
+  'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
 ];
 
-const backgroundMusic = new Audio(musicChoices[Math.floor(Math.random() * musicChoices.length)]);
-backgroundMusic.loop = true;
-backgroundMusic.muted = true;
-backgroundMusic.volume = 0.5;
+const backgroundMusic = new Audio();
+let currentMusicIndex = 0;
+
+function loadMusic(index = 0) {
+  currentMusicIndex = index;
+  backgroundMusic.src = musicChoices[index];
+  backgroundMusic.load();
+  backgroundMusic.loop = true;
+  backgroundMusic.muted = true;
+  backgroundMusic.volume = 0.5;
+}
+
+loadMusic();
 
 function setMusicButtonState(isMuted) {
   const musicToggle = document.getElementById('musicToggle');
@@ -30,6 +40,7 @@ async function toggleMusic() {
     } catch (error) {
       console.log('Music play blocked until user interaction:', error);
       backgroundMusic.muted = true;
+      setMusicButtonState(true);
     }
   } else {
     backgroundMusic.muted = true;
@@ -46,6 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
   musicToggle.addEventListener('click', toggleMusic);
 
   backgroundMusic.addEventListener('error', () => {
-    console.log('The selected music file failed to load.');
+    const nextIndex = (currentMusicIndex + 1) % musicChoices.length;
+    if (nextIndex !== currentMusicIndex) {
+      loadMusic(nextIndex);
+      if (musicToggle.dataset.muted === 'false') {
+        backgroundMusic.muted = false;
+        backgroundMusic.play().catch(() => {});
+      }
+    } else {
+      console.log('All music sources failed to load.');
+    }
   });
 });
