@@ -281,7 +281,7 @@
             <h1>MC-Addon &amp; Mods <span class="highlight">Finder</span></h1>
             <p class="subtitle">
               Ask for any type of mc-addon or mod you want to find. Whether it is a world,
-              Java mod, map, resource pack, or custom add-on, I can help you track it down. 
+              Java mod, map, resource pack, or custom add-on, I can help you track it down.
               My team... eg...ME will answer back. But if you prefer to be fully anonymous
               For a fully anonymous email, sign up onto
               <a href="https://mail.tutanota.com/signup" target="_blank" rel="noreferrer">Tuta</a>. Thank you Tuta for
@@ -351,14 +351,20 @@
       document.getElementById('requestForm')?.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const subject = document.getElementById('subject').value.trim() || 'MC Pack Request';
-        const email = document.getElementById('email').value.trim();
-        const find = document.getElementById('find').value.trim();
+        const subject = (document.getElementById('subject').value || '').trim() || 'MC Pack Request';
+        const email = (document.getElementById('email').value || '').trim();
+        const find = (document.getElementById('find').value || '').trim();
         const version = document.getElementById('version').value;
 
         const body = `Sender Email: ${email}\nVersion: ${version}\n\nDetails:\n${find}`;
+        const mailto = `mailto:inspireback@tutamail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        window.location.href = `mailto:inspireback@tutamail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const link = document.createElement('a');
+        link.href = mailto;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       });
     </script>
   </body>
