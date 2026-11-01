@@ -2,7 +2,6 @@ const musicChoices = [
   'https://files.catbox.moe/xmdojz.mp3',
   'https://files.catbox.moe/66353n.mp3',
 ];
-
 const backgroundMusic = new Audio();
 let currentMusicIndex = 0;
 let isMusicInitialized = false;
