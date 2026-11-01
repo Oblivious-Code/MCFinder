@@ -1,6 +1,6 @@
 const musicChoices = [
-  'https://files.catbox.moe/xmdojz.mp3',
-  'https://files.catbox.moe/66353n.mp3'
+  'https://files.catbox.moe/xmdojz404.mp3',
+  'https://files.catbox.moe/66353n404.mp3'
 ];
 
 const backgroundMusic = new Audio();
