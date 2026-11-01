@@ -348,11 +348,18 @@
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
     <script src="script.js"></script>
-   
-    <div class="button-row">
-  <a href="mailto:inspireback@://tutamail.com Pack Request" style="text-decoration: none;">
-    <button type="button">Send Request</button>
-  </a>
-</div>
+ 
+    document.getElementById('requestForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const subject = document.getElementById('subject').value;
+  const email = document.getElementById('email').value;
+  const find = document.getElementById('find').value;
+  const version = document.getElementById('version').value;
+  
+  const body = `Sender Email: ${email}\nVersion: ${version}\n\nDetails:\n${find}`;
+  
+  window.location.href = `mailto:inspireback@://tutamail.com{encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
   </body>
 </html>
