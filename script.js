@@ -1,7 +1,6 @@
 const musicChoices = [
   'https://files.catbox.moe/xmdojz.mp3',
   'https://files.catbox.moe/66353n.mp3',
-  'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
 ];
 
 const backgroundMusic = new Audio();
