@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!musicToggle.dataset.muted) {
     setMusicButtonState(true);
+  } else {
+    setMusicButtonState(musicToggle.dataset.muted === 'true');
   }
 
   musicToggle.addEventListener('click', toggleMusic);
