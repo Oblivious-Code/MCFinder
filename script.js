@@ -5,6 +5,7 @@ const musicChoices = [
 
 const backgroundMusic = new Audio();
 let currentMusicIndex = 0;
+let isMusicInitialized = false;
 
 function loadMusic(index = 0) {
   currentMusicIndex = index;
