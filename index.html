@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Search Engine Optimization (SEO) Tags -->
-  <title>Minecraft Mod & Addon Finder</title>
-  <meta name="description" content="Submit a request to safely find and track down specific Minecraft add-ons, Java mods, maps, and texture packs across multiple game versions.">
-  <meta name="keywords" content="minecraft addon finder, download mc mods, bedrock addon request, java mod tracker, mc finder">
-  <meta name="robots" content="index, follow">
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mod and MC-Addon Finder</title>
+    <meta name="description" content="Submit a request to safely find and track down specific Minecraft add-ons, Java mods, maps, and texture packs across multiple game versions." />
+    <meta name="keywords" content="minecraft addon finder, download mc mods, bedrock addon request, java mod tracker, mc finder" />
+    <meta name="robots" content="index, follow" />
     <style>
       :root {
         --bg: #0c1220;
@@ -27,13 +21,9 @@
         --shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
       body {
         margin: 0;
@@ -97,9 +87,7 @@
         letter-spacing: -0.05em;
       }
 
-      .highlight {
-        color: var(--primary);
-      }
+      .highlight { color: var(--primary); }
 
       .subtitle {
         margin: 0;
@@ -115,9 +103,7 @@
         font-weight: 700;
       }
 
-      .subtitle a:hover {
-        text-decoration: underline;
-      }
+      .subtitle a:hover { text-decoration: underline; }
 
       .email-row {
         display: flex;
@@ -146,10 +132,7 @@
         border-color: rgba(134, 168, 255, 0.5);
       }
 
-      .email-address {
-        color: var(--primary);
-        font-weight: 700;
-      }
+      .email-address { color: var(--primary); font-weight: 700; }
 
       .hero-panel {
         padding: 36px 28px 28px;
@@ -176,15 +159,9 @@
         line-height: 1.6;
       }
 
-      form {
-        display: grid;
-        gap: 16px;
-      }
+      form { display: grid; gap: 16px; }
 
-      .field {
-        display: grid;
-        gap: 8px;
-      }
+      .field { display: grid; gap: 8px; }
 
       label {
         font-size: 0.93rem;
@@ -214,13 +191,9 @@
         box-shadow: 0 0 0 3px rgba(122, 231, 199, 0.12);
       }
 
-      textarea {
-        min-height: 110px;
-      }
+      textarea { min-height: 110px; }
 
-      .button-row {
-        margin-top: 6px;
-      }
+      .button-row { margin-top: 6px; }
 
       button {
         width: 100%;
@@ -236,9 +209,7 @@
         box-shadow: 0 14px 24px rgba(78, 201, 165, 0.22);
       }
 
-      button:hover {
-        transform: translateY(-1px);
-      }
+      button:hover { transform: translateY(-1px); }
 
       .music-toggle {
         position: fixed;
@@ -282,18 +253,12 @@
         font-weight: 700;
       }
 
-      .music-credit a:hover {
-        text-decoration: underline;
-      }
+      .music-credit a:hover { text-decoration: underline; }
 
       @media (max-width: 860px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
+        .hero { grid-template-columns: 1fr; }
 
-        .hero-copy {
-          padding: 42px 24px 20px;
-        }
+        .hero-copy { padding: 42px 24px 20px; }
 
         .hero-panel {
           border-left: none;
@@ -314,22 +279,17 @@
         <div class="hero">
           <div class="hero-copy">
             <div class="eyebrow">Mod and MC-Addon Finder</div>
-            <h1>MC-Addon & Mods <span class="highlight">Finder</span></h1>
+            <h1>MC-Addon &amp; Mods <span class="highlight">Finder</span></h1>
             <p class="subtitle">
               Ask for any type of mc-addon or mod you want to find. Whether it is a world,
-              Java mod, map, resource pack, skin, or custom add-on, I can help you track it down. Or find one ;>
-
-              [x] Not Anonymous PLEASE NOTE that your email will be seen... by an administrator eg...ME, if you prefer to be fully anonymous go sign up to...
-              <a href="https://mail.tutanota.com/signup" target="_blank" rel="noreferrer">TutaMail... CLICK HERE!</a>
-              for a free email without needing anything of your personal information. Thank you Tuta for NOT sponsoring this video!
-              and you’ll get a completely new, anonymous, real, cool, interesting... email.. address! 
-              Make sure to choose the free plan! When you click the link! ;)
-              See you!...I wish we could talk longer, oh well... bye! 'w'
+              Java mod, map, resource pack, or custom add-on, I can help you track it down.
+              For a fully anonymous email, sign up on
+              <a href="https://mail.tutanota.com/signup" target="_blank" rel="noreferrer">Tuta</a>.
             </p>
 
             <div class="email-row">
               <a class="email-link" href="mailto:inspireback@tutamail.com">
-                <span>Email Me! Here...</span>
+                <span>Email me</span>
                 <span class="email-address">inspireback@tutamail.com</span>
               </a>
             </div>
@@ -338,7 +298,7 @@
           <div class="hero-panel">
             <div class="request-card">
               <h2>Request a MC pack</h2>
-              <p>Tell me what you want and I’ll prepare a simillar request.</p>
+              <p>Tell me what you want and I’ll prepare a matching request.</p>
 
               <form id="requestForm">
                 <div class="field">
@@ -348,7 +308,7 @@
 
                 <div class="field">
                   <label for="email">Your Email</label>
-                  <input id="email" name="email" type="email" placeholder="YourName!@example.com" required />
+                  <input id="email" name="email" type="email" placeholder="john@example.com" required />
                 </div>
 
                 <div class="field">
@@ -357,14 +317,14 @@
                 </div>
 
                 <div class="field">
-                  <label for="version">Compatibility Version & Edition</label>
+                  <label for="version">Compatibility Version &amp; Edition</label>
                   <select id="version" name="version" required>
                     <option value="">Select...</option>
-                    <option value="Java Edition 1.26+">Java Edition 26+</option>
+                    <option value="Java Edition 1.26+">Java Edition 1.26+</option>
                     <option value="Java Edition 1.20-1.21">Java Edition 1.20-1.21</option>
                     <option value="Java Edition 1.16-1.19">Java Edition 1.16-1.19</option>
-                    <option value="Bedrock 1.26+">Bedrock 26+</option>
-                    <option value="Bedrock 1.20-1.21+">Bedrock 1.20-1.21</option>
+                    <option value="Bedrock 1.26+">Bedrock 1.26+</option>
+                    <option value="Bedrock 1.20-1.21+">Bedrock 1.20-1.21+</option>
                     <option value="Bedrock 1.16-1.19">Bedrock 1.16-1.19</option>
                     <option value="Any Version">Any Version</option>
                   </select>
@@ -381,40 +341,11 @@
     </div>
 
     <div class="music-credit">
-      ALL RIGHTS RESERVED FOR <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Hyper Potions</a>! Check his channel out! Just <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Click here! or there...<---</a>...
+      ALL RIGHTS RESERVED FOR <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">Hyper Potions</a>! Check his channel out! Just <a href="https://www.youtube.com/@HyperPotions" target="_blank" rel="noreferrer">hyper potions</a>...
     </div>
 
     <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">🔇 Music</button>
 
     <script src="script.js"></script>
-    <script>
-      const form = document.getElementById('requestForm');
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const subject = document.getElementById('subject').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const find = document.getElementById('find').value.trim();
-        const version = document.getElementById('version').value.trim();
-
-        if (!subject || !email || !find || !version) {
-          alert('Please fill in all fields before sending your request.');
-          return;
-        }
-
-        const mailtoBody = [
-          'Subject: ' + subject,
-          '',
-          'Email: ' + email,
-          'Compatibility Version: ' + version,
-          '',
-          'What to Find:',
-          find
-        ].join('\n');
-
-        window.location.href = 'mailto:inspireback@tutamail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(mailtoBody);
-      });
-    </script>
   </body>
 </html>
