@@ -11,7 +11,7 @@ function loadMusic(index = 0) {
   backgroundMusic.src = musicChoices[index];
   backgroundMusic.load();
   backgroundMusic.loop = true;
-  backgroundMusic.muted = true;
+  backgroundMusic.muted = false;
   backgroundMusic.volume = 0.5;
 }
 
